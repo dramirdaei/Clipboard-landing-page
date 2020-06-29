@@ -7,3 +7,30 @@ $StrongCyan: hsl(171, 66%, 44%);
 $LightBlue: hsl(233, 100%, 69%);
 $DarkGrayishBlue: hsl(210, 10%, 33%);
 $GrayishBlue: hsl(201, 11%, 66%);
+
+// media queries
+$breakpoints: (
+  small: 699px,
+  medium: 700px,
+  large: 1000px,
+  xlarge: 1300px,
+);
+
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get(
+    $map: $breakpoints,
+    $key: $size,
+  );
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+@mixin breakpoint-less($size) {
+  $breakpoint-value: map-get(
+    $map: $breakpoints,
+    $key: $size,
+  );
+  @media screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}

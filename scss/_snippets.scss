@@ -1,0 +1,38 @@
+.snippets {
+  &__content {
+    position: relative;
+    width: 100%;
+    @include breakpoint(large) {
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__features {
+    text-align: center;
+
+    @include breakpoint(large) {
+      margin-left: 55px;
+      text-align: left;
+    }
+    p {
+      max-width: 340px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 60px;
+    @include breakpoint(large) {
+      margin-bottom: 0;
+    }
+    img {
+      width: 100%;
+      max-width: 500px;
+      @include breakpoint(large) {
+        max-width: none;
+        transform: translateX(-55px);
+      }
+    }
+  }
+}

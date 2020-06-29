@@ -13,12 +13,34 @@ body {
   line-height: 1.3;
   font-family: $font__primary;
   color: $GrayishBlue;
+  margin: 0;
+  padding: 0;
+  @include breakpoint(large) {
+    font-size: 1.15rem;
+  }
 }
 h1,
 h2,
 h3 {
   color: $DarkGrayishBlue;
   font-weight: 600;
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  @include breakpoint(large) {
+    //44px
+    font-size: 2.75rem;
+  }
+}
+h2 {
+  font-size: 1.75rem; //28px
+  @include breakpoint(large) {
+    //34px
+    font-size: 2.125rem;
+  }
 }
 //button
 
@@ -31,10 +53,70 @@ button,
   border: none;
   padding: 16px 40px;
   cursor: pointer;
+  transition: all 300ms ease-in-out;
+
+  @include breakpoint-less(small) {
+    width: 100%;
+  }
+
   &.cyan {
     background-color: $StrongCyan;
+    border-bottom: 2px solid $StrongCyan;
+    &:hover {
+      background-color: lighten($StrongCyan, 5%);
+      box-shadow: 0px 8px 15px rgba($StrongCyan, 0.4);
+    }
   }
   &.purple {
     background-color: $LightBlue;
+    border-bottom: 2px solid $LightBlue;
+    &:hover {
+      background-color: lighten($LightBlue, 5%);
+      box-shadow: 0px 8px 15px rgba($LightBlue, 0.4);
+    }
   }
+}
+.wrapper {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 95px;
+  @include breakpoint(large) {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 80px;
+  }
+}
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.content {
+  max-width: 70%;
+  img {
+    width: 100%;
+    height: auto;
+    &.mefium {
+      max-width: 400px;
+    }
+  }
+}
+.margin-bottom {
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+//p tags
+p.large {
+  font-size: 1.25rem;
+}
+p.medium {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+p.small {
+  font-size: 1rem;
+}
+.lg-margin-bottom {
+  margin-bottom: 80px;
 }
