@@ -1,0 +1,121 @@
+footer {
+  background-color: #f5f6f8;
+
+  padding-top: 46px;
+
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    @include breakpoint(large) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+  .logo {
+    display: block;
+    //   margin: 25px auto;
+    text-align: center;
+
+    img {
+      width: 60px;
+    }
+  }
+  .links {
+    @include breakpoint(medium) {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 90px;
+      row-gap: 20px;
+    }
+    a {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      @include breakpoint(large) {
+        margin: 0;
+      }
+      @include breakpoint(medium) {
+        margin: 0;
+      }
+      &:hover {
+        color: $StrongCyan;
+      }
+
+      &:first-child {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      &:nth-child(2) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      &:nth-child(4) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      &:nth-child(5) {
+        grid-column: 3/4;
+        grid-row: 1/2;
+      }
+    }
+  }
+  .social {
+    display: block;
+    margin-top: 50px;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+    }
+    @include breakpoint(large) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0;
+    }
+
+    a {
+      width: 25px;
+      height: 25px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+      //   &:hover{
+      //       color: $StrongCyan;
+      //   }
+    }
+    a.facebook {
+      background-image: url(../images/icon-facebook.svg);
+    }
+    a.twitter {
+      background-image: url(../images/icon-twitter.svg);
+    }
+    a.instagram {
+      background-image: url(../images/icon-instagram.svg);
+    }
+  }
+
+  &__credit {
+      margin-top: 100px;
+  }
+}
